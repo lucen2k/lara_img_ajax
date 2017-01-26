@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin', ['as' => 'admin.index', 'uses' => 'AdminController@index']);
+Route::get('admin/images', ['uses'=>'AdminController@images']);
+Route::post('ajaxImageUpload', ['as'=>'ajaxImageUpload','uses'=>'AdminController@ajaxImageUploadPost']);
